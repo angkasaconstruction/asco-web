@@ -204,7 +204,11 @@ text-decoration: none; }
 
     /* Portfolio */
     .portfolio { background: var(--light-gray); }
-    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
+   .portfolio-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+  gap: 22px; 
+}
     .portfolio-item { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px var(--shadow); }
     .portfolio-img {
   width: 100%;
@@ -250,7 +254,11 @@ text-decoration: none; }
     .testimonial-author { font-weight: 700; }
 
     /* Contact */
-    .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px; }
+  .contact-container { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+  gap: 36px; 
+}
     .contact-item {
   display: flex;
   align-items: center;   /* biar vertikal rata tengah */
@@ -506,7 +514,10 @@ header {
 header.hide {
   transform: translateY(-100%);
 }
-
+html, body { 
+  max-width: 100%; 
+  overflow-x: hidden; 
+}
 </style>
 <!-- KOREKSI: Structured Data SEO (ganti URL/Logo/SameAs) -->
 <script type="application/ld+json">
