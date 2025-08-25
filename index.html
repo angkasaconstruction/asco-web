@@ -126,7 +126,12 @@ text-decoration: none; }
     }
    
 
-    .container { max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 20px; }
+    .container {
+  max-width: 1200px;
+  margin: 0 auto;         /* selalu center */
+  padding: 0 16px;        /* aman di HP kecil */
+  box-sizing: border-box;
+}
 
     /* Header */
     header {
@@ -208,6 +213,7 @@ text-decoration: none; }
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
   gap: 22px; 
+  justify-content: center;  /* biar center saat 1 kolom */
 }
     .portfolio-item { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px var(--shadow); }
     .portfolio-img {
@@ -254,10 +260,11 @@ text-decoration: none; }
     .testimonial-author { font-weight: 700; }
 
     /* Contact */
-  .contact-container { 
+ .contact-container { 
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
   gap: 36px; 
+  justify-content: center;  /* biar center saat 1 kolom */
 }
     .contact-item {
   display: flex;
@@ -517,6 +524,18 @@ header.hide {
 html, body { 
   max-width: 100%; 
   overflow-x: hidden; 
+}
+     img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 360px) {
+  .portfolio-grid, 
+  .contact-container {
+    grid-template-columns: 1fr; /* fallback di HP mungil */
+  }
 }
 </style>
 <!-- KOREKSI: Structured Data SEO (ganti URL/Logo/SameAs) -->
